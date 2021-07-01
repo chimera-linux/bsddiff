@@ -1,6 +1,7 @@
 sdiff = executable('sdiff',
-    ['edit.c', 'sdiff.c', 'strtonum.c'],
-    include_directories: [sysdefs],
+    ['edit.c', 'sdiff.c'],
+    include_directories: [sysdefs, icompat],
+    link_with: [libcompat],
     install: true,
 )
 

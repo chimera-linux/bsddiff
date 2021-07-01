@@ -3,9 +3,11 @@ project('bsddiff', ['c'], version: '0.99.0', default_options: [
 ], license: 'BSD-2-Clause')
 
 sysdefs = include_directories('.')
+icompat = include_directories('compat')
 
 add_global_arguments(['-Dlint', '-D_GNU_SOURCE'], language: ['c'])
 
+subdir('compat')
 subdir('cmp')
 subdir('diff')
 subdir('diff3')
